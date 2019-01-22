@@ -32,7 +32,7 @@ tar xz \
 
 cp /usr/bin/qemu-arm-static ./Dockerfiles/basement/arch-rootfs/usr/bin/qemu-arm-static
 
-for repo in archlinux-${ARCH}::squash archlinux-${ARCH}:full:squash archlinux-${ARCH}:devel:nosquash; do
+for repo in archlinuxarm-${ARCH}::squash archlinuxarm-${ARCH}:full:squash archlinuxarm-${ARCH}:devel:nosquash; do
 	IFS=: read repo tag opt <<< $repo
 	docker build -f ./Dockerfiles/basement/Dockerfile${tag:+.$tag} -t ${ORGA}/${repo}:${tag:+$tag-}${TAR_DATE} ./Dockerfiles/basement
 	if [ "${opt}" == "squash" ]; then

@@ -1,4 +1,4 @@
-FROM agners/archlinux-arm32v7:currenttar
+FROM agners/archlinuxarm-arm32v7:currenttar
 LABEL maintainer "ArchLinux ARM Dockerimage Maintainers"
 
 RUN    pacman --noconfirm -Syu \

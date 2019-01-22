@@ -1,4 +1,4 @@
-FROM agners/archlinux-arm32v7:full-currenttar
+FROM agners/archlinuxarm-arm32v7:full-currenttar
 LABEL maintainer "agners"
 
 RUN    pacman --noconfirm -Syu --needed base-devel \

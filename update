@@ -4,7 +4,7 @@ ORGA=agners
 TAR_DATE=${TAR_DATE:-$(date +'%Y.%m')}
 ARCH=arm32v7
 
-for repo in archlinux-${ARCH} archlinux-${ARCH}:full archlinux-${ARCH}:devel; do
+for repo in archlinuxarm-${ARCH} archlinuxarm-${ARCH}:full archlinuxarm-${ARCH}:devel; do
 	IFS=: read repo tag <<< $repo
 	docker build -f ./Dockerfiles/updates/Dockerfile${tag:+.$tag} -t ${ORGA}/${repo}${tag:+:$tag} ./Dockerfiles/updates
 done

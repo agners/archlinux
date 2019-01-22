@@ -36,7 +36,7 @@ This implies, that you get daily updates, but only have to download the actual c
 
 ## Issues and improvements
 
-If you want to contribute, get to the [issues-section of this repository](https://github.com/lopsided98/archlinux/issues).
+If you want to contribute, get to the [issues-section of this repository](https://github.com/agners/archlinux/issues).
 
 ## Common hurdles
 
