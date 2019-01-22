@@ -1,5 +1,5 @@
 FROM scratch
-LABEL maintainer "lopsided"
+LABEL maintainer "agners"
 
 ADD arch-rootfs/ /
 ADD additional/ /
@@ -19,7 +19,7 @@ RUN : \
          dhcpcd \
          iproute2 \
          jfsutils \
-         linux-raspberrypi \
+         linux \
          lvm2 \
          man-db \
          man-pages \
@@ -28,9 +28,6 @@ RUN : \
          netctl \
          openresolv \
          pciutils \
-         raspberrypi-bootloader \
-         raspberrypi-bootloader-x \
-         raspberrypi-firmware \
          reiserfsprogs \
          s-nail \
          systemd-sysvcompat \

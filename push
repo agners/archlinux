@@ -1,8 +1,8 @@
 #!/bin/bash -ex
 
-ORGA=lopsided
+ORGA=agners
 TAR_DATE=${TAR_DATE:-$(date +'%Y.%m')}
-ARCH=armv7h
+ARCH=arm32v7
 
 for repo in archlinux-${ARCH} archlinux-${ARCH}:full archlinux-${ARCH}:devel; do
 	IFS=: read repo tag <<< $repo

@@ -1,16 +1,7 @@
-image: lopsided/archlinux:devel
+image: agners/archlinuxarm:devel
 manifests:
-  - image: lopsided/archlinux-armv6h:devel
+  - image: agners/archlinuxarm-arm32v7:devel
     platform:
       architecture: arm
-      variant: armv6l
-      os: linux
-  - image: lopsided/archlinux-armv7h:devel
-    platform:
-      architecture: arm
-      variant: armv7l
-      os: linux
-  - image: base/devel:latest
-    platform:
-      architecture: amd64
+      variant: arm32v7
       os: linux

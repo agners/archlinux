@@ -1,5 +1,5 @@
-FROM lopsided/archlinux-armv7h:full-currenttar
-LABEL maintainer "lopsided"
+FROM agners/archlinux-arm32v7:full-currenttar
+LABEL maintainer "agners"
 
 RUN    pacman --noconfirm -Syu --needed base-devel \
     && rm -f \
