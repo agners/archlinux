@@ -7,8 +7,8 @@ services:
   - docker
 install:
   - go get github.com/estesp/manifest-tool
-  - sudo su -c 'echo "{ "experimental": true }" > /etc/docker/daemon.json'
-  - sudo service docker restart
+  - 'echo ''{ "experimental": true }'' | sudo tee /etc/docker/daemon.json'
+  - sudo systemctl restart docker
   # Tarball seems to be updated on the 10th, so wait for it to update
   - export TAR_DATE=$(date --date='11 days ago' +'%Y.%m')
   - sudo mkdir -p /root/.gnupg
