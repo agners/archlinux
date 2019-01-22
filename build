@@ -30,8 +30,6 @@ tar xz \
 	--strip-components=1 \
 	--directory=./Dockerfiles/basement/arch-rootfs
 
-cp /usr/bin/qemu-arm-static ./Dockerfiles/basement/arch-rootfs/usr/bin/qemu-arm-static
-
 for repo in archlinuxarm-${ARCH}::squash archlinuxarm-${ARCH}:full:squash archlinuxarm-${ARCH}:devel:nosquash; do
 	IFS=: read repo tag opt <<< $repo
 	docker build -f ./Dockerfiles/basement/Dockerfile${tag:+.$tag} -t ${ORGA}/${repo}:${tag:+$tag-}${TAR_DATE} ./Dockerfiles/basement
