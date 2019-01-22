@@ -7,7 +7,8 @@ services:
   - docker
 install:
   - go get github.com/estesp/manifest-tool
-  - sudo pip install https://github.com/goldmann/docker-squash/archive/master.zip
+  - sudo su -c 'echo "{ "experimental": true }" > /etc/docker/daemon.json'
+  - sudo service docker restart
   # Tarball seems to be updated on the 10th, so wait for it to update
   - export TAR_DATE=$(date --date='11 days ago' +'%Y.%m')
   - sudo mkdir -p /root/.gnupg

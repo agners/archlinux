@@ -32,10 +32,13 @@ tar xz \
 
 for repo in archlinuxarm-${ARCH}::squash archlinuxarm-${ARCH}:full:squash archlinuxarm-${ARCH}:devel:nosquash; do
 	IFS=: read repo tag opt <<< $repo
-	docker build -f ./Dockerfiles/basement/Dockerfile${tag:+.$tag} -t ${ORGA}/${repo}:${tag:+$tag-}${TAR_DATE} ./Dockerfiles/basement
+	SQUASH=false
 	if [ "${opt}" == "squash" ]; then
-		docker-squash ${ORGA}/${repo}:${tag:+$tag-}${TAR_DATE}
+		SQUASH=true
 	fi
+
+	docker build -f ./Dockerfiles/basement/Dockerfile${tag:+.$tag} --squash=${SQUASH} -t ${ORGA}/${repo}:${tag:+$tag-}${TAR_DATE} ./Dockerfiles/basement
+
 	# alias the image with name currenttar instead of actual date to get referenced by static dockerfiles
 	docker tag ${ORGA}/${repo}:${tag:+$tag-}${TAR_DATE} ${ORGA}/${repo}:${tag:+$tag-}currenttar
 done
