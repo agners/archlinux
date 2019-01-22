@@ -1,15 +1,18 @@
-# Basic Arch Linux images [![Build Status](https://travis-ci.org/lopsided98/archlinux.svg?branch=armv7h)](https://travis-ci.org/lopsided98/archlinux)
+# Basic Arch Linux images [![Build Status](https://travis-ci.org/agners/archlinux.svg?branch=arm32v7)](https://travis-ci.org/agners/archlinux)
 
-Docker images for Arch Linux on armv7h. Built daily by Travis CI on publicly visible infrastructure.
+Docker images for Arch Linux on arm32v7. Built daily by Travis CI on publicly visible infrastructure.
 
 Based off of https://github.com/archimg/archlinux
 
 ## Running the images
 
-The images are on [Docker Hub](https://hub.docker.com/u/lopsided/). Use the convenient `docker run`:
+The images are on [Docker Hub](https://hub.docker.com/u/agners/). Use the convenient `docker run`:
 
-    docker run --rm -ti lopsided/archlinux-armv7h
-    docker run --rm -ti lopsided/archlinux-armv7h:devel
+    docker run --rm -ti agners/archlinuxarm
+
+Instead of using the multi-arch container above, you can also get the architecture specific image directly:
+
+    docker run --rm -ti agners/archlinuxarm-arm32v7:devel
 
 ## Tags
 
