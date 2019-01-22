@@ -20,6 +20,7 @@ RUN : \
          iproute2 \
          jfsutils \
          linux-armv7 \
+         linux-firmware \
          lvm2 \
          man-db \
          man-pages \
