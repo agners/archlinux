@@ -19,7 +19,7 @@ RUN : \
          dhcpcd \
          iproute2 \
          jfsutils \
-         linux \
+         linux-armv7 \
          lvm2 \
          man-db \
          man-pages \
@@ -33,8 +33,6 @@ RUN : \
          systemd-sysvcompat \
          usbutils \
          vi \
-         wireless_tools \
-         wpa_supplicant \
          xfsprogs \
     && rm -rf \
       /usr/share/man/* \
